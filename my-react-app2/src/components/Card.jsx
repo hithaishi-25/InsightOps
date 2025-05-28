@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { memo } from 'react';
 
 function Card({ image, title, number }) {
   return (
@@ -9,7 +10,7 @@ function Card({ image, title, number }) {
           src={image}
           alt={title}
           className="w-[100px] h-[100px] object-cover"
-          onError={(e) => (e.target.src = 'https://via.placeholder.com/150')} // Fallback image
+          // onError={(e) => (e.target.src = 'https://via.placeholder.com/150')} // Fallback image
         />
       </div>
       {/* Content Section */}
@@ -27,4 +28,4 @@ Card.propTypes = {
   number: PropTypes.number.isRequired,
 };
 
-export default Card;
+export default memo(Card);
