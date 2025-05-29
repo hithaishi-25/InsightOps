@@ -9,7 +9,7 @@ function Card({ image, title, number }) {
         <img
           src={image}
           alt={title}
-          className="w-[100px] h-[100px] object-cover"
+          className="w-[70px] h-[180px] object-cover"
           // onError={(e) => (e.target.src = 'https://via.placeholder.com/150')} // Fallback image
         />
       </div>

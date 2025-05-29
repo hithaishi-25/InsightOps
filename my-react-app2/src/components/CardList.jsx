@@ -3,7 +3,7 @@ import Card from './Card'; // Adjust the import path based on your file structur
 
 function CardList({ cards }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-4">
       {cards.map((card) => (
         <Card
           key={card.id} // Use a unique ID for each card

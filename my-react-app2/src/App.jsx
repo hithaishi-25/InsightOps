@@ -1,8 +1,8 @@
 import CardList from './components/CardList'; // Adjust the import path
 import './index.css';
-
+// import { UsersIcon, FolderIcon, DocumentIcon } from '@heroicons/react/24/solid';
 function App() {
-  // Sample data for 6 cards
+  
   const cardData = [
     {
       id: '1',
@@ -21,24 +21,6 @@ function App() {
       image: 'https://via.placeholder.com/100?text=Card3',
       title: 'Card 3',
       number: 30,
-    },
-    {
-      id: '4',
-      image: 'https://via.placeholder.com/100?text=Card4',
-      title: 'Card 4',
-      number: 40,
-    },
-    {
-      id: '5',
-      image: 'https://via.placeholder.com/100?text=Card5',
-      title: 'Card 5',
-      number: 50,
-    },
-    {
-      id: '6',
-      image: 'https://via.placeholder.com/100?text=Card6',
-      title: 'Card 6',
-      number: 60,
     },
   ];
 
