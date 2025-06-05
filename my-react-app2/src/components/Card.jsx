@@ -1,31 +1,29 @@
 import PropTypes from 'prop-types';
 import { memo } from 'react';
+// import { BriefcaseIcon, FolderIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/solid';
 
-function Card({ image, title, number }) {
+function Card({ title, number, icon, color }) {
+  const IconComponent = icon;
   return (
-    <div className="inline-block rounded-lg overflow-hidden shadow-md bg-black hover:shadow-lg transition-shadow duration-200">
-      {/* Image Section */}
-      <div className="flex justify-center">
-        <img
-          src={image}
-          alt={title}
-          className="w-[70px] h-[180px] object-cover"
-          // onError={(e) => (e.target.src = 'https://via.placeholder.com/150')} // Fallback image
-        />
+    <div className="w-40 h-40 rounded-lg shadow-md bg-white hover:shadow-lg transition-shadow duration-200 flex flex-col items-center justify-center">
+      {/* Icon Section */}
+      <div className={`w-20 h-20 ${color} rounded flex items-center justify-center`}>
+        <IconComponent className="w-10 h-10 text-white" />
       </div>
       {/* Content Section */}
-      <div className="p-4">
-        <h3 className="text-lg font-semibold text-white truncate">{title}</h3>
-        <p className="text-sm text-gray-300 mt-1">Count: {number}</p>
+      <div className="flex flex-col items-center mt-1">
+        <h3 className="text-base font-semibold text-black">{title}</h3>
+        <p className="text-sm text-black">{number}</p>
       </div>
     </div>
   );
 }
 
 Card.propTypes = {
-  image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   number: PropTypes.number.isRequired,
+  icon: PropTypes.elementType.isRequired,
+  color: PropTypes.string.isRequired,
 };
 
 export default memo(Card);

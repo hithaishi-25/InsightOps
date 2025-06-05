@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
-import Card from './Card'; // Adjust the import path based on your file structure
+import Card from './Card';
 
 function CardList({ cards }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-4">
+    <div className="flex justify-center gap-6 mt-4">
       {cards.map((card) => (
         <Card
-          key={card.id} // Use a unique ID for each card
-          image={card.image}
+          key={card.id}
           title={card.title}
           number={card.number}
+          icon={card.icon}
+          color={card.color}
         />
       ))}
     </div>
@@ -20,9 +21,10 @@ CardList.propTypes = {
   cards: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-      image: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       number: PropTypes.number.isRequired,
+      icon: PropTypes.elementType.isRequired,
+      color: PropTypes.string.isRequired,
     })
   ).isRequired,
 };
